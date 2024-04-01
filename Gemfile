@@ -47,3 +47,4 @@ end
 
 gem 'dotenv-rails'
 gem 'google-api-client'
+gem 'rack-cors'
