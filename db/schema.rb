@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_01_104814) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_02_090111) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,27 +20,27 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_01_104814) do
     t.string "formatted_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "spots_id", null: false
-    t.index ["spots_id"], name: "index_addresses_on_spots_id"
+    t.bigint "spot_id", null: false
+    t.index ["spot_id"], name: "index_addresses_on_spot_id"
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "users_id", null: false
-    t.bigint "spots_id", null: false
-    t.index ["spots_id"], name: "index_comments_on_spots_id"
-    t.index ["users_id"], name: "index_comments_on_users_id"
+    t.bigint "user_id", null: false
+    t.bigint "spot_id", null: false
+    t.index ["spot_id"], name: "index_comments_on_spot_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "users_id", null: false
-    t.bigint "spots_id", null: false
-    t.index ["spots_id"], name: "index_likes_on_spots_id"
-    t.index ["users_id"], name: "index_likes_on_users_id"
+    t.bigint "user_id", null: false
+    t.bigint "spot_id", null: false
+    t.index ["spot_id"], name: "index_likes_on_spot_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -51,8 +51,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_01_104814) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "users_id", null: false
-    t.index ["users_id"], name: "index_spots_on_users_id"
+    t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,15 +67,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_01_104814) do
     t.string "thumbnail_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "spots_id", null: false
-    t.index ["spots_id"], name: "index_videos_on_spots_id"
+    t.bigint "spot_id", null: false
+    t.index ["spot_id"], name: "index_videos_on_spot_id"
   end
 
-  add_foreign_key "addresses", "spots", column: "spots_id"
-  add_foreign_key "comments", "spots", column: "spots_id"
-  add_foreign_key "comments", "users", column: "users_id"
-  add_foreign_key "likes", "spots", column: "spots_id"
-  add_foreign_key "likes", "users", column: "users_id"
-  add_foreign_key "spots", "users", column: "users_id"
-  add_foreign_key "videos", "spots", column: "spots_id"
+  add_foreign_key "addresses", "spots"
+  add_foreign_key "comments", "spots"
+  add_foreign_key "comments", "users"
+  add_foreign_key "likes", "spots"
+  add_foreign_key "likes", "users"
+  add_foreign_key "spots", "users"
+  add_foreign_key "videos", "spots"
 end
