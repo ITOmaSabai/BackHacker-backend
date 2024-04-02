@@ -1,5 +1,5 @@
 databases:
-  - name: back_hacker
+  - name: BackHacker
     databaseName: back_hacker
     user: ito
     region: singapore
