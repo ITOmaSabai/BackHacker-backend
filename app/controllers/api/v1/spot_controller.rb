@@ -1,4 +1,4 @@
-class SpotController < ApplicationController
+class Api::V1::SpotController < ApplicationController
   before_action: set_spot, onlu: %i[show update destroy]
 
   def index
