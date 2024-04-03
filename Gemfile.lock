@@ -259,6 +259,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   google-api-client
+  jwt
   pg (~> 1.1)
   puma (>= 5.0)
   rack-cors

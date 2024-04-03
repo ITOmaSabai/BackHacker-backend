@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       resources :likes, only: %i[index create destroy]
       resources :conmments, only: %i[index create update destroy]
       resources :notifications, only: %i[index create update destroy]
+      resource :authentication, only: %i[create]
+
     end
   end
 
