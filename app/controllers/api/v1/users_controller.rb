@@ -1,4 +1,6 @@
-class Api::V1::UsersController < ApplicationController
+class Api::V1::UsersController < Api::V1::BaseController
+  skip_before_action :authenticate, only: %i[index show]
+
   def index
     users = User.all
   end
@@ -24,9 +26,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find_by(uid: params[:id])
-    if user
-      user.destroy
+    if current_user.destroy
       render json: { message: '退会処理が完了しました' }, status: :ok
     else
       render json: { error: 'ユーザーが見つかりませんでした' }, status: :not_found
