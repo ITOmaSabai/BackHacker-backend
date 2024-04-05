@@ -1,5 +1,6 @@
-class Api::V1::SpotController < ApplicationController
-  before_action: set_spot, onlu: %i[show update destroy]
+class Api::V1::SpotsController < Api::V1::BaseController
+  before_action :set_spot, only: %i[show update destroy]
+  skip_before_action :authenticate, only: %i[index show]
 
   def index
     spots = Spot.includes(:user, :addresses, :likes, :videos).all
@@ -7,10 +8,11 @@ class Api::V1::SpotController < ApplicationController
   end
 
   def create
-    spot = Spot.new(spot_params)
+    @_current_user = current_user
+    spot = @_current_user.spots.new(spot_params)
 
     if spot.save
-      render json: spot, status: :created_at
+      render json: spot, status: :created
     else
       render json: spot.errors, status: :unprocessable_entity
     end
