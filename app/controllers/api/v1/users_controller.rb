@@ -1,5 +1,5 @@
 class Api::V1::UsersController < Api::V1::BaseController
-  skip_before_action :authenticate, only: %i[index show]
+  skip_before_action :authenticate, only: %i[index]
 
   def index
     users = User.all
@@ -7,7 +7,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def show
     @_current_user = current_user
-    user_with_relations = User.includes(:spots, :likes).find(@_current_user.id)
+    user_with_relations = User.includes(:spots, :likes).find_by(uid: @_current_user.uid)
 
     if user_with_relations
       render json: user_with_relations.as_json(include: [:spots, :likes])
