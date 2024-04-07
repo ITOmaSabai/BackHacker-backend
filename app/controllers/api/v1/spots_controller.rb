@@ -9,10 +9,11 @@ class Api::V1::SpotsController < Api::V1::BaseController
 
   def create
     @_current_user = current_user
-    spot = @_current_user.spots.new(spot_params)
+    spot = @_current_user.spots.new(spot_params.except(:address_components, :formatted_address))
 
     if spot.save
-      render json: spot, status: :created
+      address = AddressService.save_address_from_address_components(spot_params[:address_components], spot_params[:formatted_address], spot.id)
+      render json: {spot: spot, address: address}, status: :created
     else
       render json: spot.errors, status: :unprocessable_entity
     end
@@ -37,7 +38,7 @@ class Api::V1::SpotsController < Api::V1::BaseController
   private
 
   def spot_params
-    params.require(:spot).permit(:name, :description, :lat, :lng, :user_id)
+    params.require(:spot).permit(:name, :description, :lat, :lng, :user_id, :formatted_address, address_components: [:long_name, :short_name, types: []])
   end
 
   def set_spot
