@@ -12,8 +12,11 @@ class Api::V1::SpotsController < Api::V1::BaseController
     spot = @_current_user.spots.new(spot_params.except(:address_components, :formatted_address))
 
     if spot.save
+      logger.debug(spot.id)
       address = AddressService.save_address_from_address_components(spot_params[:address_components], spot_params[:formatted_address], spot.id)
-      render json: {spot: spot, address: address}, status: :created
+      videos = VideoService.call(spot.id, keyword: "#{address[1]} #{address[2]} walking tour")
+
+      render json: {spot: spot, address: address, videos: videos}, status: :created
     else
       render json: spot.errors, status: :unprocessable_entity
     end
