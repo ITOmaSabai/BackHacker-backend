@@ -9,13 +9,13 @@ class AddressService
       formatted_address: formatted_address,
       spot_id: spot_id
     )
-    return address
+    return address, country, administrative_area_level_1
   end
 
   private
 
   def self.extract_long_name_by_type(address_components, type)
-    return nil unless address_components.is_a?(Array)
+    # return nil unless address_components.is_a?(Array)
 
     component = address_components.find { |component| component['types'].include?(type) }
     component ? component['long_name'] : nil

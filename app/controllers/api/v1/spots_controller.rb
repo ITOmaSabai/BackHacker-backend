@@ -38,7 +38,7 @@ class Api::V1::SpotsController < Api::V1::BaseController
   private
 
   def spot_params
-    params.require(:spot).permit(:name, :description, :lat, :lng, :user_id, :formatted_address, address_components: [:long_name, :short_name, types: []])
+    params.require(:spot).permit(:name, :description, :lat, :lng, :formatted_address, address_components: [:long_name, :short_name, types: []])
   end
 
   def set_spot
