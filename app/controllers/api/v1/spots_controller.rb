@@ -3,7 +3,7 @@ class Api::V1::SpotsController < Api::V1::BaseController
   skip_before_action :authenticate, only: %i[index show]
 
   def index
-    spots = Spot.includes(:user, :addresses, :likes, :videos).all
+    spots = Spot.includes(:user, :address, :likes, :videos).all
     render json: spots, include: [:user, :address, :likes, :videos]
   end
 
