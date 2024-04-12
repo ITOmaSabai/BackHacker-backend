@@ -23,19 +23,25 @@ class Api::V1::SpotsController < Api::V1::BaseController
   end
 
   def show
-    render json: spot
+    render json: @spot
   end
 
   def update
-    if spot.update(spot_params)
-      render json: spot
+    if @spot.update(spot_params)
+      render json: @spot
     else
-      render json: spot.errors, status: :unprocessable_entity
+      render json: @spot.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    spot.destroy
+    @_current_user = current_user
+
+    if @spot.destroy
+      render json: {}, status: :no_content
+    else
+      render json: { error: "削除に失敗しました" }, status: :unprocessable_entity
+    end
   end
 
   private
@@ -45,6 +51,6 @@ class Api::V1::SpotsController < Api::V1::BaseController
   end
 
   def set_spot
-    spot = Spot.find(paramas[:id])
+    @spot = Spot.find(params[:id])
   end
 end
