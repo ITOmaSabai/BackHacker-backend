@@ -1,22 +1,17 @@
-class Api::V1::CommentsController < ApplicationController
+class Api::V1::CommentsController < Api::V1::BaseController
+  skip_before_action :authenticate, only: %i[index]
+
   def index
-    comments = Comment.all
-    render json: comments
+    comments = Comment.includes(:user).all
+    render json: comments, include: [:user]
   end
 
   def create
-    comment = comment.new(comment_params)
+    @_current_user = current_user
+    comment = @_current_user.comments.new(comment_params)
+
     if comment.save
       render json: comment, status: :created
-    else
-      render json: comment.errors, status: :unprocessable_entity
-    end
-  end
-
-  def update
-    comment = Comment.find(params[:id])
-    if comment.update
-      render json: comment, status: :success
     else
       render json: comment.errors, status: :unprocessable_entity
     end
@@ -30,6 +25,6 @@ class Api::V1::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :users_id, :spots_id)
+    params.require(:comment).permit(:content, :user_id, :spot_id)
   end
 end

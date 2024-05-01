@@ -8,7 +8,7 @@ Rails.application.routes.draw do
         post 'search', on: :collection
       end
       resources :likes, only: %i[index create destroy]
-      resources :conmments, only: %i[index create update destroy]
+      resources :comments, only: %i[index create update destroy]
       resources :notifications, only: %i[index create update destroy]
       resource :authentication, only: %i[create]
 
