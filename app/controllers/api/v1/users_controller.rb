@@ -32,7 +32,9 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def destroy
-    if current_user.destroy
+    @_current_user = current_user
+
+    if @_current_user.destroy
       render json: { message: '退会処理が完了しました' }, status: :ok
     else
       render json: { error: 'ユーザーが見つかりませんでした' }, status: :not_found
