@@ -2,7 +2,7 @@
 こちらは「BackHacker.」のバックエンドのリポジトリです。  
 フロントエンドのリポジトリは[こちら](https://github.com/ITOmaSabai/BackHacker-frontend)です。
 # BackHacker. / バーチャル旅行体験アプリ
-![サムネイル](../assets/images/BackHacker_thumbnail.png)
+![サムネイル](https://github.com/ITOmaSabai/BackHacker/blob/main/assets/images/BackHacker_thumbnail.png?raw=true)
 [![React](https://img.shields.io/badge/React-v18.2.0-61DAFB?logo=React&logoColor=61DAFB)](https://react.dev/blog/2022/03/29/react-v18#whats-new-in-react-18)
 [![Ruby](https://img.shields.io/badge/Ruby-v3.2.2-CC342D?logo=Ruby&logoColor=CC342D)](https://www.ruby-lang.org/ja/news/2023/03/30/ruby-3-2-2-released)
 [![Rails](https://img.shields.io/badge/Rails-v7.1.3-CC0000?logo=Ruby-on-Rails&logoColor=CC0000)](https://rubyonrails.org/2024/2/21/Rails-Versions-6-1-7-7-7-0-8-1-and-7-1-3-2-have-been-released)
@@ -51,18 +51,28 @@ https://x.com/Ito_GeekHatch
 - スポットは、ユーザー自身で新規作成することができます。スポットに関連する動画は、住所情報を元にYouTubeから自動で取得されます (スポットの住所を元にYouTubeを検索しています)。
 - ユーザープロフィールページでは、各ユーザーの投稿したスポットといいねしたスポットを一覧で確認できます。
 
-![使い方](../assets/gifs/how_to_use.gif)
+![使い方](https://github.com/ITOmaSabai/BackHacker/blob/main/assets/gifs/how_to_use.gif?raw=true)
 
 ### メイン機能の使い方
-| スポットを見る | スポットを投稿する |
-| :--- | :--- |
-| ![スポットを見る](../assets/gifs/view_spots.gif) | ![スポットを投稿する](../assets/gifs/post_spots.gif) |
-| 地図上のピンをクリックします。モーダルが動画を見る場合は、開いたモーダルの動画サムネイルをクリックします。 | 地図上をクリック後、スポットを投稿ボタンを押下します。次に、スポット名と説明（任意）を入力してから投稿するボタンを押下します。 |
+| スポットを見る |
+| :--- |
+| ![スポットを見る](https://github.com/ITOmaSabai/BackHacker/blob/main/assets/gifs/view_spots.gif?raw=true) |
+| 地図上のピンをクリックします。モーダルが動画を見る場合は、開いたモーダルの動画サムネイルをクリックします。 |
 
-| いいねする | コメントする |
-| :--- | :--- |
-| ![いいねする](../assets/gifs/likes.gif) | ![コメントする](../assets/gifs/comments.gif) |
-| スポット詳細画面のハートのボタンを押下します。いいねを解除するには、もう一度押下します。 | スポット詳細画面の吹き出しボタンを押下するとモーダルが開きます。コメントを入力後、投稿ボタンを押下します。コメントを削除するには、コメントの横のゴミ箱アイコンを押下します。 |
+| スポットを投稿する |
+| :--- |
+| ![スポットを投稿する](https://github.com/ITOmaSabai/BackHacker/blob/main/assets/gifs/post_spots.gif?raw=true) |
+| 地図上をクリック後、スポットを投稿ボタンを押下します。次に、スポット名と説明（任意）を入力してから投稿するボタンを押下します。 |
+
+| いいねする |
+| :--- |
+| ![いいねする](https://github.com/ITOmaSabai/BackHacker/blob/main/assets/gifs/likes.gif?raw=true) |
+| スポット詳細画面のハートのボタンを押下します。いいねを解除するには、もう一度押下します。ボタンの横の数字はいいね数を表しています。 |
+
+| コメントする |
+| :--- |
+| ![コメントする](https://github.com/ITOmaSabai/BackHacker/blob/main/assets/gifs/comments.gif?raw=true) |
+| スポット詳細画面の吹き出しボタンを押下するとモーダルが開きます。コメントを入力後、投稿ボタンを押下します。コメントを削除するには、コメントの横のゴミ箱アイコンを押下します。 |
 
 
 ## 機能
@@ -128,12 +138,12 @@ Dockerの使用も検討しましたが、最短時間で環境構築をし、�
 ▼画面の全面に地図を表示することで、アプリへの没入感を演出しました。
 | PC画面 | スマートフォン画面 |
 | :--- | :--- |
-| ![PC画面](../assets/images/map_laptop_view.png) | ![スマートフォン画面](../assets/images/map_smartphone_view.png) |
+| ![PC画面](https://github.com/ITOmaSabai/BackHacker/blob/main/assets/images/map_laptop_view.png?raw=true) | ![スマートフォン画面](https://github.com/ITOmaSabai/BackHacker/blob/main/assets/images/map_smartphone_view.png?raw=true)  |
 
 ▼新規投稿完了後には次のアクションを促すモーダルを表示するなど、ユーザーの行動を先読みして誘導することで、ユーザーが次のアクションに迷わないようにしました。
 | 新規投稿完了後のモーダル |
 | :--- |
-| ![スポットを投稿する](../assets/gifs/post_spots.gif) |
+| ![新規投稿完了後のモーダル](https://github.com/ITOmaSabai/BackHacker/blob/main/assets/gifs/post_spots.gif?raw=true) |
 
 ▼ユーザーがアプリを操作する際ストレスを感じないように、利用者の多いアプリのボタン配置を参考に、UIを構築しました。
 
