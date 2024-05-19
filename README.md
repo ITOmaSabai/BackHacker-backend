@@ -1,16 +1,17 @@
 
-こちらは「BackHacker.」のバックエンドのリポジトリです。フロントエンドのリポジトリは[こちら](https://github.com/ITOmaSabai/BackHacker-frontend)です。
+こちらは「BackHacker.」のバックエンドのリポジトリです。  
+フロントエンドのリポジトリは[こちら](https://github.com/ITOmaSabai/BackHacker-frontend)です。
 # BackHacker. / バーチャル旅行体験アプリ
-![サムネイル](https://raw.githubusercontent.com/ITOmaSabai/BackHacker-frontend/main/public/backhacker-thumbnail.jpg)
+![サムネイル](../assets/images/BackHacker_thumbnail.png)
 [![React](https://img.shields.io/badge/React-v18.2.0-61DAFB?logo=React&logoColor=61DAFB)](https://react.dev/blog/2022/03/29/react-v18#whats-new-in-react-18)
 [![Ruby](https://img.shields.io/badge/Ruby-v3.2.2-CC342D?logo=Ruby&logoColor=CC342D)](https://www.ruby-lang.org/ja/news/2023/03/30/ruby-3-2-2-released)
-[![Rails](https://img.shields.io/badge/Rails-v7.1.3-CC0000?logo=Ruby-on-Rails&logoColor=CC0000)](https://rubyonrails.org/2023/3/13/Rails-7-0-4-3-and-6-1-7-3-have-been-released)
-[![Firebase](https://img.shields.io/badge/Firebase-gray?logo=Firebase&logoColor=FFCA28)](https://firebase.google.com)
+[![Rails](https://img.shields.io/badge/Rails-v7.1.3-CC0000?logo=Ruby-on-Rails&logoColor=CC0000)](https://rubyonrails.org/2024/2/21/Rails-Versions-6-1-7-7-7-0-8-1-and-7-1-3-2-have-been-released)
+[![Firebase](https://img.shields.io/badge/Firebase-gray?logo=Firebase&logoColor=FFCA28)](https://firebase.google.com/)
 [![Maps JavaScript API](https://img.shields.io/badge/Maps_JavaScript_API-gray?logo=googlemaps&logoColor=%234285F4&color=gray
-)]()
+)](https://developers.google.com/maps/documentation/javascript/overview)
 [![YouTube Data API](https://img.shields.io/badge/YouTube_Data_API-gray?logo=youtube&logoColor=%23FF0000
-)]()
-[![Thanks](https://img.shields.io/badge/Thank%20you-for%20visiting-00aab9)](https://www.hayabusatrip.com)
+)](https://developers.google.com/youtube/v3)
+[![Thanks](https://img.shields.io/badge/Thank%20you-for%20visiting-00aab9)](https://backhacker-frontend.vercel.app/)
 
 
 
@@ -41,7 +42,7 @@ https://backhacker-frontend.vercel.app/
 レスポンシブ対応済みのため、スマートフォン環境からでもご利用いただけます。
 
 ### ▼開発者Xアカウント
-https://twitter.com/Ito_GeekHatch  
+https://x.com/Ito_GeekHatch  
 お気づきの点がございましたら、こちらまでお気軽にご連絡ください。
 
 ## 使い方
@@ -50,28 +51,19 @@ https://twitter.com/Ito_GeekHatch
 - スポットは、ユーザー自身で新規作成することができます。スポットに関連する動画は、住所情報を元にYouTubeから自動で取得されます (スポットの住所を元にYouTubeを検索しています)。
 - ユーザープロフィールページでは、各ユーザーの投稿したスポットといいねしたスポットを一覧で確認できます。
 
-[![使い方](https://i.gyazo.com/3209c0beaaec2a350238615a5926ebd7.gif)](https://gyazo.com/3209c0beaaec2a350238615a5926ebd7)
+![使い方](../assets/gifs/how_to_use.gif)
 
 ### メイン機能の使い方
-| スポットを見る |
-| :---: |
-| [![スポットを見る](https://i.gyazo.com/8ebf747e3ee5d10b464e71f06a5efb27.gif)](https://gyazo.com/8ebf747e3ee5d10b464e71f06a5efb27) |
-| 地図上のピンをクリックします。モーダルが動画を見る場合は、開いたモーダルの動画サムネイルをクリックします。 |
+| スポットを見る | スポットを投稿する |
+| :--- | :--- |
+| ![スポットを見る](../assets/gifs/view_spots.gif) | ![スポットを投稿する](../assets/gifs/post_spots.gif) |
+| 地図上のピンをクリックします。モーダルが動画を見る場合は、開いたモーダルの動画サムネイルをクリックします。 | 地図上をクリック後、スポットを投稿ボタンを押下します。次に、スポット名と説明（任意）を入力してから投稿するボタンを押下します。 |
 
-| スポットを投稿する(ログインユーザー限定) |
-| :---: |
-| [![スポットを投稿する](https://i.gyazo.com/3b0aee014fab183248671e556e69bbdf.gif)](https://gyazo.com/3b0aee014fab183248671e556e69bbdf) |
-| 地図上をクリック後、スポットを投稿ボタンを押下します。次に、スポット名と説明（任意）を入力してから投稿するボタンを押下します。 |
+| いいねする | コメントする |
+| :--- | :--- |
+| ![いいねする](../assets/gifs/likes.gif) | ![コメントする](../assets/gifs/comments.gif) |
+| スポット詳細画面のハートのボタンを押下します。いいねを解除するには、もう一度押下します。 | スポット詳細画面の吹き出しボタンを押下するとモーダルが開きます。コメントを入力後、投稿ボタンを押下します。コメントを削除するには、コメントの横のゴミ箱アイコンを押下します。 |
 
-| いいねする(ログインユーザー限定) |
-| :---: |
-| [![いいねする](https://i.gyazo.com/ad2906f2a8bbed99727c74ff3650cc91.gif)](https://gyazo.com/ad2906f2a8bbed99727c74ff3650cc91) |
-| スポット詳細画面のハートのボタンを押下します。いいねを解除するには、もう一度押下します。 |
-
-| コメントする(ログインユーザー限定) |
-| :---: |
-| [![コメントする](https://i.gyazo.com/83e53fdcd73c695f1c77265d6bf577b4.gif)](https://gyazo.com/83e53fdcd73c695f1c77265d6bf577b4) |
-| スポット詳細画面の吹き出しボタンを押下するとモーダルが開きます。コメントを入力後、投稿ボタンを押下します。コメントを削除するには、コメントの横のゴミ箱アイコンを押下します。 |
 
 ## 機能
 - ユーザー登録機能
@@ -133,9 +125,17 @@ Dockerの使用も検討しましたが、最短時間で環境構築をし、�
 2. 基本利用が無料である点(個人開発アプリを長く維持するためには、運用コストは最小限に抑える必要があると判断したため)
 
 ## 工夫した点
-- 画面の全面に地図を表示することで、アプリへの没入感を演出しました。
-- 新規投稿完了後には次のアクションを促すモーダルを表示するなど、ユーザーの行動を先読みして誘導することで、ユーザーが次のアクションに迷わないようにしました。
-- ユーザーがアプリを操作する際ストレスを感じないように、利用者の多いアプリのボタン配置を参考に、UIを構築しました。
+▼画面の全面に地図を表示することで、アプリへの没入感を演出しました。
+| PC画面 | スマートフォン画面 |
+| :--- | :--- |
+| ![PC画面](../assets/images/map_laptop_view.png) | ![スマートフォン画面](../assets/images/map_smartphone_view.png) |
+
+▼新規投稿完了後には次のアクションを促すモーダルを表示するなど、ユーザーの行動を先読みして誘導することで、ユーザーが次のアクションに迷わないようにしました。
+| 新規投稿完了後のモーダル |
+| :--- |
+| ![スポットを投稿する](../assets/gifs/post_spots.gif) |
+
+▼ユーザーがアプリを操作する際ストレスを感じないように、利用者の多いアプリのボタン配置を参考に、UIを構築しました。
 
 ## 今後の展望
 以下の機能を追加していきたいと考えています。
