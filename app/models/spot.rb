@@ -1,4 +1,8 @@
 class Spot < ApplicationRecord
+  validates :name, presence: true
+  validates :lat, presence: true
+  validates :lng, presence: true
+
   belongs_to :user
 
   has_one :address, dependent: :destroy
